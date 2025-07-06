@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcommercePro Optimizer</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Lucide React icons (simplified version)
+        const ShoppingCart = ({ size = 20, className = "" }) => React.createElement('svg', {
+            width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className
+        }, React.createElement('circle', { cx: "9", cy: "21", r: "1" }), React.createElement('circle', { cx: "20", cy: "21", r: "1" }), React.createElement('path', { d: "m1 1 4 4 10 10h8l-4-4" }));
+        
+        const Users = ({ size = 20, className = "" }) => React.createElement('svg', {
+            width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className
+        }, React.createElement('path', { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" }), React.createElement('circle', { cx: "9", cy: "7", r: "4" }), React.createElement('path', { d: "m22 21-2-2a4 4 0 0 0-4-4h-2a4 4 0 0 0-4 4v2" }));
+        
+        const TrendingUp = ({ size = 20, className = "" }) => React.createElement('svg', {
+            width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className
+        }, React.createElement('polyline', { points: "22,7 13.5,15.5 8.5,10.5 2,17" }), React.createElement('polyline', { points: "16,7 22,7 22,13" }));
+        
+        const AlertTriangle = ({ size = 20, className = "" }) => React.createElement('svg', {
+            width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className
+        }, React.createElement('path', { d: "m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" }), React.createElement('path', { d: "M12 9v4" }), React.createElement('path', { d: "m12 17 .01 0" }));
+        
+        const DollarSign = ({ size = 20, className = "" }) => React.createElement('svg', {
+            width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className
+        }, React.createElement('line', { x1: "12", y1: "1", x2: "12", y2: "23" }), React.createElement('path', { d: "M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" }));
+        
+        const Package = ({ size = 20, className = "" }) => React.createElement('svg', {
+            width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className
+        }, React.createElement('path', { d: "m7.5 4.27 9 5.15" }), React.createElement('path', { d: "M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" }), React.createElement('path', { d: "m3.3 7 8.7 5 8.7-5" }), React.createElement('path', { d: "M12 22V12" }));
+        
+        const Target = ({ size = 20, className = "" }) => React.createElement('svg', {
+            width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className
+        }, React.createElement('circle', { cx: "12", cy: "12", r: "10" }), React.createElement('circle', { cx: "12", cy: "12", r: "6" }), React.createElement('circle', { cx: "12", cy: "12", r: "2" }));
+        
+        const BarChart3 = ({ size = 20, className = "" }) => React.createElement('svg', {
+            width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className
+        }, React.createElement('path', { d: "M3 3v18h18" }), React.createElement('path', { d: "m19 9-5 5-4-4-3 3" }));
+        
+        const Zap = ({ size = 20, className = "" }) => React.createElement('svg', {
+            width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className
+        }, React.createElement('polygon', { points: "13,2 3,14 12,14 11,22 21,10 12,10 13,2" }));
+        
+        const Mail = ({ size = 20, className = "" }) => React.createElement('svg', {
+            width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className
+        }, React.createElement('path', { d: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" }), React.createElement('polyline', { points: "22,6 12,13 2,6" }));
+        
+        const Clock = ({ size = 20, className = "" }) => React.createElement('svg', {
+            width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", className
+        }, React.createElement('circle', { cx: "12", cy: "12", r: "10" }), React.createElement('polyline', { points: "12,6 12,12 16,14" }));
+    </script>
+    <style>
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        
+        const EcommerceOptimizer = () => {
+            const [activeTab, setActiveTab] = useState('dashboard');
+            const [metrics, setMetrics] = useState({
+                cartAbandonmentRate: 68.8,
+                avgOrderValue: 85.50,
+                customerLifetimeValue: 245.80,
+                inventoryTurnover: 4.2,
+                customerAcquisitionCost: 32.10,
+                conversionRate: 2.3
+            });
+
+            const [abandonedCarts, setAbandonedCarts] = useState([
+                { id: 1, email: 'john.doe@email.com', items: 3, value: 127.50, timeAgo: '2 hours', stage: 'checkout' },
+                { id: 2, email: 'sarah.smith@email.com', items: 1, value: 45.00, timeAgo: '4 hours', stage: 'cart' },
+                { id: 3, email: 'mike.johnson@email.com', items: 2, value: 89.99, timeAgo: '6 hours', stage: 'payment' },
+                { id: 4, email: 'lisa.wilson@email.com', items: 5, value: 203.25, timeAgo: '8 hours', stage: 'shipping' }
+            ]);
+
+            const sendRecoveryEmail = (cartId, template) => {
+                const updatedCarts = abandonedCarts.map(cart => 
+                    cart.id === cartId ? { ...cart, status: 'email_sent' } : cart
+                );
+                setAbandonedCarts(updatedCarts);
+                alert(`${template} recovery email sent successfully!`);
+            };
+
+            const MetricCard = ({ title, value, change, icon: Icon, color }) => (
+                <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+                    <div className="flex items-center justify-between mb-4">
+                        <div className={`p-3 rounded-lg ${color}`}>
+                            <Icon size={24} className="text-white" />
+                        </div>
+                        <span className={`text-sm font-medium ${change.startsWith('+') ? 'text-green-600' : 'text-red-600'}`}>
+                            {change}
+                        </span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">{value}</h3>
+                    <p className="text-gray-600 text-sm">{title}</p>
+                </div>
+            );
+
+            const Dashboard = () => (
+                <div className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <MetricCard 
+                            title="Cart Abandonment Rate"
+                            value={`${metrics.cartAbandonmentRate}%`}
+                            change="-2.1%"
+                            icon={ShoppingCart}
+                            color="bg-red-500"
+                        />
+                        <MetricCard 
+                            title="Average Order Value"
+                            value={`$${metrics.avgOrderValue}`}
+                            change="+5.2%"
+                            icon={DollarSign}
+                            color="bg-green-500"
+                        />
+                        <MetricCard 
+                            title="Customer Lifetime Value"
+                            value={`$${metrics.customerLifetimeValue}`}
+                            change="+8.7%"
+                            icon={Users}
+                            color="bg-blue-500"
+                        />
+                        <MetricCard 
+                            title="Inventory Turnover"
+                            value={`${metrics.inventoryTurnover}x`}
+                            change="+0.3"
+                            icon={Package}
+                            color="bg-purple-500"
+                        />
+                        <MetricCard 
+                            title="Customer Acquisition Cost"
+                            value={`$${metrics.customerAcquisitionCost}`}
+                            change="-3.1%"
+                            icon={Target}
+                            color="bg-orange-500"
+                        />
+                        <MetricCard 
+                            title="Conversion Rate"
+                            value={`${metrics.conversionRate}%`}
+                            change="+0.4%"
+                            icon={TrendingUp}
+                            color="bg-indigo-500"
+                        />
+                    </div>
+
+                    <div className="bg-white rounded-xl shadow-lg p-6">
+                        <h3 className="text-lg font-semibold mb-4 flex items-center">
+                            <AlertTriangle className="mr-2 text-yellow-500" size={20} />
+                            Abandoned Cart Recovery
+                        </h3>
+                        <div className="overflow-x-auto">
+                            <table className="w-full">
+                                <thead>
+                                    <tr className="border-b">
+                                        <th className="text-left py-3 px-4 font-medium text-gray-700">Customer</th>
+                                        <th className="text-left py-3 px-4 font-medium text-gray-700">Items</th>
+                                        <th className="text-left py-3 px-4 font-medium text-gray-700">Value</th>
+                                        <th className="text-left py-3 px-4 font-medium text-gray-700">Stage</th>
+                                        <th className="text-left py-3 px-4 font-medium text-gray-700">Time</th>
+                                        <th className="text-left py-3 px-4 font-medium text-gray-700">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {abandonedCarts.map((cart) => (
+                                        <tr key={cart.id} className="border-b hover:bg-gray-50">
+                                            <td className="py-3 px-4 text-sm">{cart.email}</td>
+                                            <td className="py-3 px-4 text-sm">{cart.items}</td>
+                                            <td className="py-3 px-4 text-sm font-medium">${cart.value}</td>
+                                            <td className="py-3 px-4 text-sm">
+                                                <span className={`px-2 py-1 rounded-full text-xs ${
+                                                    cart.stage === 'payment' ? 'bg-red-100 text-red-700' :
+                                                    cart.stage === 'checkout' ? 'bg-yellow-100 text-yellow-700' :
+                                                    'bg-blue-100 text-blue-700'
+                                                }`}>
+                                                    {cart.stage}
+                                                </span>
+                                            </td>
+                                            <td className="py-3 px-4 text-sm text-gray-500">{cart.timeAgo}</td>
+                                            <td className="py-3 px-4">
+                                                <div className="flex space-x-2">
+                                                    <button 
+                                                        onClick={() => sendRecoveryEmail(cart.id, 'Standard')}
+                                                        className="bg-blue-600 text-white px-3 py-1 rounded text-xs hover:bg-blue-700 transition-colors"
+                                                    >
+                                                        Send Email
+                                                    </button>
+                                                    <button 
+                                                        onClick={() => sendRecoveryEmail(cart.id, 'Discount')}
+                                                        className="bg-green-600 text-white px-3 py-1 rounded text-xs hover:bg-green-700 transition-colors"
+                                                    >
+                                                        Offer Discount
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            );
+
+            const tabs = [
+                { id: 'dashboard', label: 'Dashboard', icon: BarChart3 }
+            ];
+
+            return (
+                <div className="min-h-screen bg-gray-50">
+                    <div className="bg-white shadow-sm border-b">
+                        <div className="max-w-7xl mx-auto px-4 py-4">
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center space-x-3">
+                                    <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
+                                        <Zap className="text-white" size={24} />
+                                    </div>
+                                    <div>
+                                        <h1 className="text-2xl font-bold text-gray-900">EcommercePro Optimizer</h1>
+                                        <p className="text-sm text-gray-600">Solve your biggest ecommerce challenges</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center space-x-4">
+                                    <div className="text-right">
+                                        <p className="text-sm font-medium text-gray-900">Revenue Impact</p>
+                                        <p className="text-lg font-bold text-green-600">+$127k this month</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="max-w-7xl mx-auto px-4 py-6">
+                        <Dashboard />
+                    </div>
+                </div>
+            );
+        };
+
+        // Render the app
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<EcommerceOptimizer />);
+    </script>
+</body>
+</html>
